@@ -20,8 +20,10 @@ const uploadAssetsOnCloudinary = async (localFilePath) => {
         return response
     } catch (error) {
         // If there's an error, then remove the file from the server and console log the error
+        console.error(error);
+    } finally {
+        // Always remove the file from the server
         fs.unlinkSync(localFilePath)
-        console.log(error);
     }
 }
 
