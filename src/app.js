@@ -40,4 +40,10 @@ app.use(express.static("public"));
     This is to securely access and perform crud operations on cookies in clients browser.
 */
 app.use(cookieParser());
+
+// routes import 
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
 export default app;
